@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercice 03 - Le gâteau au chocolat</title>
+</head>
+<body>
+    <h1>Exercice 03 - Le gâteau au chocolat</h1>
+    <h2>Gateau au chocolat</h2>
+    <ul id="list">Liste des ingrédients
+        <li>50g de farine</li>
+        <li>100g de beurre</li>
+        <li>1L d'huile</li>
+        <li>200g de chocolat</li>
+        <li>3 oeufs</li>
+    </ul>    
+        <script>
+        const avantDernier = document.getElementById("list");
+        const sucre = avantDernier.querySelector('#list li:nth-last-child(2)');
+        const aD = avantDernier.removeChild(sucre);
+        </script>
+</body>
+</html>

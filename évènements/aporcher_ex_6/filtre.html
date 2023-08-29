@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Produits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .product-list {
+            list-style: none;
+            padding: 0;
+        }
+        .product-item {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .category-buttons {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste de Produits</h1>
+    
+    <div class="category-buttons">
+        <button class="category-filter" data-category="ludique">Ludique</button>
+        <button class="category-filter" data-category="pratique">Pratique</button>
+        <button class="category-filter" data-category="sportif">Sportif</button>
+        <button id="reset-filter">Afficher tous les produits</button>
+    </div>
+    
+    <ul class="product-list">
+        <li class="product-item" data-categories="ludique pratique">iPad</li>
+        <li class="product-item" data-categories="ludique sportif">Batte de baseball</li>
+        <li class="product-item" data-categories="pratique">Ventilateur</li>
+        <li class="product-item" data-categories="ludique">Console de jeux</li>
+        <li class="product-item" data-categories="sportif">Ballon de football</li>
+        <li class="product-item" data-categories="ludique pratique">Livre électronique</li>
+        <li class="product-item" data-categories="pratique sportif">Sac à dos</li>
+        <li class="product-item" data-categories="pratique">Lampe de bureau</li>
+        <li class="product-item" data-categories="ludique sportif">Trottinette</li>
+        <li class="product-item" data-categories="sportif">Casque de vélo</li>
+    </ul>
+    
+    <script>
+        const categoryButtons = document.querySelectorAll('.category-filter');
+        const resetFilterButton = document.getElementById('reset-filter');
+        const productItems = document.querySelectorAll('.product-item');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedCategory = button.getAttribute('data-category');
+                filterProducts(selectedCategory);
+            });
+        });
+        
+        resetFilterButton.addEventListener('click', () => {
+            showAllProducts();
+        });
+        
+        function filterProducts(category) {
+            productItems.forEach(item => {
+                const itemCategories = item.getAttribute('data-categories').split(' ');
+                if (itemCategories.includes(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        
+        function showAllProducts() {
+            productItems.forEach(item => {
+                item.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>

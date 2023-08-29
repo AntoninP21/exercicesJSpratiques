@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: white;
+        }
+        p {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        .red-text {
+            color: red;
+        }
+        .black-background {
+            background-color: black;
+        }
+    </style>
+    <title>Interactions JavaScript</title>
+</head>
+<body>
+    <p onclick="document.getElementById('paragraph5').classList.toggle('hidden')">Cliquez pour cacher/réafficher le cinquième paragraphe</p>
+    <p id="paragraph2">Paragraphe 2</p>
+    <p ondblclick="document.getElementById('paragraph2').classList.toggle('red-text')">Double-cliquez pour changer la couleur du texte du deuxième paragraphe</p>
+    <p id="paragraph4">Paragraphe 4</p>
+    <p id="paragraph5" onclick="document.body.classList.toggle('black-background')">Cliquez pour changer la couleur de fond</p>
+</body>
+</html>
